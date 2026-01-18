@@ -33,7 +33,7 @@
 ---
 
 ## 📸 Screenshots
-*(Add your screenshots here to wow your users!)*
+
 
 | Desktop Feed | Mobile View | Single Post |
 | :---: | :---: | :---: |
