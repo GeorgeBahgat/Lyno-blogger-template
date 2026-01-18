@@ -1,0 +1,1028 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='5.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.languageDirection == "rtl" ? "ar" : "en"' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+    <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
+    
+    <!-- Core SEO & Meta -->
+    <meta expr:content='data:blog.isMobile ? "max-image-preview:large" : "max-image-preview:standard"' name='robots'/>
+    <link expr:href='data:blog.url' rel='canonical'/>
+    <meta expr:content='data:blog.metaDescription ?: data:blog.pageTitle' name='description'/>
+    
+    <!-- Blogger system tags (Reduced Impact) -->
+    &lt;!--<b:include data='blog' name='all-head-content'/>--&gt;
+    
+    <title><data:blog.pageTitle/></title>
+
+    <!-- Performance Preconnections -->
+    <link crossorigin='anonymous' href='https://fonts.gstatic.com' rel='preconnect'/>
+    <link href='https://fonts.googleapis.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com' rel='preconnect'/>
+    <link crossorigin='anonymous' href='https://blogger.googleusercontent.com' rel='preconnect'/>
+
+    <!-- Optimized Font & Icon Preloading -->
+    <link as='font' crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2' rel='preload' type='font/woff2'/>
+    <link as='font' crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-regular-400.woff2' rel='preload' type='font/woff2'/>
+    <link as='style' href='https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&amp;family=Cairo:wght@400;600;800&amp;display=swap' rel='preload'/>
+    <link href='https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&amp;family=Cairo:wght@400;600;800&amp;display=swap' media='print' onload='this.media="all"' rel='stylesheet'/>
+    
+    <link as='style' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' rel='preload'/>
+    <link crossorigin='anonymous' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' media='print' onload='this.media="all"' referrerpolicy='no-referrer' rel='stylesheet'/>
+
+    <style>
+        /* Force font-display: swap for FontAwesome to fix Lighthouse diagnostic */
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Font Awesome 6 Free';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-regular-400.woff2') format('woff2');
+        }
+    </style>
+
+    <b:skin><![CDATA[
+    /* 
+    -----------------------------------------------
+    THEME: LYNO SOCIAL PRO
+    DEVELOPER: George Bahgat
+    VERSION: 5.5.0
+    -----------------------------------------------
+    */
+    
+    /* Variable Definitions for Theme Designer */
+    /* <Group description="Site Branding" title="Site Branding">
+       <Variable name="site.name" description="Site Name" type="string" default="LYNO PRO" value="LYNO PRO"/>
+       <Variable name="site.logo" description="Logo URL (Icon instead of Text)" type="string" default="" value=""/>
+    </Group> */
+
+    :root {
+        --primary: #4f46e5;
+        --secondary: #ec4899;
+        --accent: #22c55e;
+        --bg: #0b0d11;
+        --surface: #15181e;
+        --card-bg: #1c2128;
+        --text: #f9fafb;
+        --text-sub: #b1b8c5; /* Improved contrast for dark */
+        --border: rgba(255,255,255,0.06);
+        --glass: rgba(11, 13, 17, 0.7);
+        --blur: 16px;
+        --radius: 20px;
+        --container: 1440px;
+        --transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        --shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+    }
+    
+    [data-theme="light"] {
+        --bg: #f5f7fa;
+        --surface: #ffffff;
+        --card-bg: #ffffff;
+        --text: #1e293b;
+        --text-sub: #475569; /* Improved contrast for light */
+        --border: rgba(0,0,0,0.06);
+        --glass: rgba(255, 255, 255, 0.85);
+        --shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.08), 0 4px 12px -5px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Base Setup */
+    * { margin:0; padding:0; box-sizing:border-box; outline:none; }
+    html { scroll-behavior: smooth; }
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Outfit', 'Cairo', sans-serif;
+        font-size: 15px;
+        line-height: normal;
+        overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; height: auto; border-radius: var(--radius); }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+    .app-container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+
+    /* 
+    ========================================
+    1. HEADER (Social Style Sticky)
+    ========================================
+    */
+    .header-social {
+        position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+        background: var(--glass);
+        backdrop-filter: blur(var(--blur)); -webkit-backdrop-filter: blur(var(--blur));
+        border-bottom: 1px solid var(--border);
+        z-index: 2000;
+        display: flex; align-items: center;
+    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+
+    .brand-logo { 
+        font-size: 26px; font-weight: 900; letter-spacing: -1.5px; 
+        display: flex; align-items: center; gap: 8px; cursor: pointer;
+    }
+    .brand-logo i { color: var(--primary); filter: drop-shadow(0 0 10px rgba(79, 70, 229, 0.4)); }
+    .brand-logo:hover { transform: scale(1.05); }
+
+    /* Search Bar */
+    .header-search {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 50px;
+        padding: 0 20px;
+        height: 40px;
+        display: flex; align-items: center; gap: 10px;
+        width: 400px;
+        transition: var(--transition);
+    }
+    .header-search:focus-within { border-color: var(--primary); box-shadow: 0 0 15px rgba(79, 70, 229, 0.1); width: 450px; }
+    .header-search input { background: none; border: none; color: var(--text); font-size: 14px; width: 100%; }
+    .header-search i { color: var(--text-sub); }
+
+    .nav-actions { display: flex; align-items: center; gap: 15px; }
+
+    .nav-link-btn {
+        width: 45px; height: 45px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        background: var(--surface); border: 1px solid var(--border);
+        color: var(--text-sub); font-size: 18px; cursor: pointer;
+    }
+    .nav-link-btn:hover { background: var(--primary); color: #fff; transform: translateY(-3px); box-shadow: 0 8px 20px -5px rgba(79, 70, 229, 0.4); }
+
+    /* Cards & Widgets Baselines */
+    .nav-card, .side-widget, .social-card, .post-view {
+        box-shadow: var(--shadow);
+    }
+
+    /* 
+    ========================================
+    2. MAIN GRID (The Feed Layout)
+    ========================================
+    */
+    .main-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr 320px;
+        gap: 30px;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    /* Left Sidebar */
+    .left-side { position: sticky; top: 100px; height: calc(100vh - 120px); }
+    .nav-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 15px; margin-bottom: 20px; transition: var(--transition); }
+    .nav-card:hover { border-color: var(--primary); }
+    .nav-item { 
+        display: flex; align-items: center; gap: 15px; padding: 12px 15px; 
+        border-radius: 12px; font-weight: 600; color: var(--text-sub); margin-bottom: 5px;
+    }
+    .nav-item i { width: 24px; font-size: 20px; text-align: center; color: var(--primary); }
+    [data-theme="light"] .nav-item i { 
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .nav-item:hover, .nav-item.active { background: rgba(79, 70, 229, 0.08); color: var(--primary); }
+    .nav-item.active { background: var(--primary); color: #fff; box-shadow: 0 8px 20px -5px rgba(79, 70, 229, 0.4); }
+    .nav-item.active i { color: #fff !important; -webkit-text-fill-color: #fff !important; }
+
+    /* Center Feed */
+    .content-feed { display: flex; flex-direction: column; } 
+
+    /* AdSense Slot Wrapper */
+    .adsense-wrapper { 
+        background: var(--surface); border: 1px dashed var(--border); 
+        padding: 20px; border-radius: var(--radius); text-align: center; 
+        min-height: 100px; display: flex; align-items: center; justify-content: center;
+        margin-bottom: 30px; overflow: hidden; position: relative;
+    }
+    .adsense-label { display: none; }
+
+    /* 
+    ========================================
+    3. THE SOCIAL POST CARD
+    ========================================
+    */
+    .social-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: var(--transition);
+        position: relative;
+        margin-bottom: 60px; /* Strong spacing for social feed */
+        content-visibility: auto; contain-intrinsic-size: 1px 400px;
+    }
+    .social-card:hover { transform: translateY(-8px); border-color: rgba(79, 70, 229, 0.2); box-shadow: 0 30px 60px -15px rgba(0,0,0,0.15); }
+    [data-theme="dark"] .social-card:hover { box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5); }
+
+    .card-top { padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    .author-info { display: flex; align-items: center; gap: 10px; }
+    .author-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+    .author-name { font-weight: 700; font-size: 13px; }
+    .post-time { font-size: 10px; color: var(--text-sub); margin-top: 1px; }
+
+    .card-img-wrap { position: relative; width: 100%; height: 420px; display: block; overflow: hidden; background: #1e293b; } /* Reduced from 500px */
+    .card-img-wrap img { width: 101%; height: 101%; object-fit: cover; transition: 1.2s cubic-bezier(0.2, 0.8, 0.2, 1); border-radius: 0 !important; margin: -0.5%; }
+    .social-card:hover .card-img-wrap img { transform: scale(1.05); }
+
+    /* Floating Glass Box Overlay for Title */
+    .content-overlay {
+        position: absolute; bottom: 15px; left: 15px; right: 15px;
+        background: rgba(11, 13, 17, 0.6);
+        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.05);
+        transition: var(--transition);
+        z-index: 10;
+    }
+    .social-card:hover .content-overlay { bottom: 20px; background: rgba(11, 13, 17, 0.8); }
+    
+    .post-title a::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 1;
+    }
+    .post-title a::after {
+        /* This expands the link to cover the entire card-img-wrap */
+        margin: -420px -15px -15px -15px;
+        height: 420px;
+    }
+
+
+    .post-label { 
+        display: inline-block; background: var(--primary); color: #fff; 
+        font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 5px; 
+        margin-bottom: 10px; text-transform: uppercase;
+    }
+
+    .post-title { font-size: 19px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; color: #fff; }
+    .post-title a:hover { color: var(--primary); }
+
+    /* Card Social Actions (Like, Views) */
+    .card-social-stats { padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); background: rgba(0,0,0,0.05); }
+    .stats-left { display: flex; align-items: center; gap: 18px; }
+    .stat-item { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--text-sub); cursor: pointer; transition: 0.2s; }
+    .stat-item i { font-size: 16px; }
+    .stat-item:hover { color: var(--primary); }
+    .stat-item.liked { color: #f43f5e; }
+    .stat-item.liked i { animation: heartBeat 0.4s ease; }
+
+    @keyframes heartBeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+
+    .views-count { font-size: 13px; color: var(--text-sub); display: flex; align-items: center; gap: 5px; }
+
+    /* 
+    ========================================
+    4. RIGHT SIDEBAR (Widgets)
+    ========================================
+    */
+    .right-side { position: sticky; top: 100px; }
+    .side-widget { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 25px; }
+    .widget-head { font-size: 16px; font-weight: 800; margin-bottom: 18px; position: relative; display: flex; align-items: center; gap: 10px; }
+    .widget-head::after { content:''; flex: 1; height: 1px; background: var(--border); }
+
+    /* Topics with Scroll */
+    .topics-scroll { max-height: 350px; overflow-y: auto; padding-right: 5px; }
+    .topics-scroll::-webkit-scrollbar { width: 4px; }
+    .topic-item { 
+        display: flex; align-items: center; justify-content: space-between; 
+        padding: 10px 12px; background: var(--bg); border-radius: 10px; 
+        margin-bottom: 8px; border: 1px solid transparent; transition: 0.2s;
+    }
+    .topic-item:hover { border-color: var(--primary); background: rgba(79, 70, 229, 0.05); }
+    .topic-name { font-size: 13px; font-weight: 600; }
+    .topic-count { font-size: 11px; background: var(--surface); border: 1px solid var(--border); padding: 2px 8px; border-radius: 20px; color: var(--text-sub); }
+
+    /* Author Widget */
+    .profile-widget { text-align: center; }
+    .profile-bg { height: 70px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 15px 15px 0 0; margin: -20px -20px 30px -20px; }
+    .profile-avatar { width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--surface); margin: -70px auto 10px; object-fit: cover; }
+    .profile-name { font-size: 18px; font-weight: 800; margin-bottom: 5px; display: flex; align-items: center; justify-content: center; gap: 5px; }
+    .v-badge { color: #3b82f6; font-size: 14px; }
+    .profile-bio { font-size: 12px; color: var(--text-sub); margin-bottom: 15px; }
+
+    /* Required Pages List */
+    .legal-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border); }
+    .legal-links a { font-size: 11px; color: var(--text-sub); }
+    .legal-links a:hover { color: var(--primary); text-decoration: underline; }
+
+    /* 
+    ========================================
+    5. SINGLE POST CONTENT
+    ========================================
+    */
+    .post-view { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 40px; }
+    /* Post Body Fix */
+    .post-body-text { font-size: 17px; line-height: 1.8; color: var(--text); }
+    .post-body-text p { margin-bottom: 25px; }
+    .post-body-text img { 
+        max-width: 100%; height: auto; border-radius: 15px; 
+        display: block; margin: 30px auto; 
+        cursor: zoom-in; transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .post-body-text img:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+
+    /* Lightbox System */
+    .lyn-lightbox {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(11, 13, 17, 0.95);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        display: none; align-items: center; justify-content: center;
+        z-index: 999999; cursor: zoom-out;
+        opacity: 0; transition: opacity 0.3s ease;
+    }
+    .lyn-lightbox.active { display: flex; opacity: 1; }
+    .lyn-lightbox img {
+        max-width: 90%; max-height: 90%;
+        border-radius: 12px;
+        transform: scale(0.8); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+    .lyn-lightbox.active img { transform: scale(1); }
+
+    /* Blogger Comments Styling */
+    #comments { margin-top: 50px; padding: 30px; background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); }
+    #comments h4 { font-size: 20px; font-weight: 800; margin-bottom: 25px; }
+    .comment-thread li { list-style:none; margin-bottom: 20px; }
+    .comment-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 14px; font-weight: 700; }
+    .comment-header img { width: 35px; height: 35px; border-radius: 50%; }
+    .comment-content { font-size: 15px; color: var(--text-sub); line-height: 1.6; padding-left: 45px; }
+    #comment-editor { margin-top: 30px; border-radius: 12px; overflow: hidden; }
+
+    /* Share Tooltip simulation in JS */
+    .share-toast {
+        position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
+        background: var(--primary); color: #fff; padding: 12px 25px;
+        border-radius: 50px; font-weight: 700; font-size: 14px;
+        box-shadow: 0 10px 30px rgba(79, 70, 229, 0.4);
+        z-index: 10000; animation: slideUp 0.3s ease;
+    }
+    @keyframes slideUp { from { bottom: -50px; opacity: 0; } to { bottom: 30px; opacity: 1; } }
+
+    /* Reveal Animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease; will-change: transform, opacity; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    /* Skeleton Loading & Shimmer */
+    @keyframes shimmer {
+        0% { background-position: -468px 0; }
+        100% { background-position: 468px 0; }
+    }
+    .skeleton {
+        background: #1e293b;
+        background-image: linear-gradient(to right, #1e293b 0%, #334155 20%, #1e293b 40%, #1e293b 100%);
+        background-repeat: no-repeat;
+        background-size: 800px 1040px;
+        display: inline-block;
+        position: relative;
+        animation: shimmer 1.5s linear infinite forwards;
+    }
+    .card-img-wrap {
+        position: relative;
+        overflow: hidden;
+        background: #1e293b; /* Fallback */
+    }
+    .card-img-wrap::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: #1e293b;
+        background-image: linear-gradient(to right, #1e293b 0%, #334155 20%, #1e293b 40%, #1e293b 100%);
+        background-size: 800px 1040px;
+        animation: shimmer 1.5s linear infinite forwards;
+        z-index: 1;
+        transition: opacity 0.5s ease;
+    }
+    .card-img-wrap.loaded::before {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .card-img-wrap img {
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        z-index: 2;
+        position: relative;
+        border-radius: 0 !important; /* Force square to fill container rounding */
+    }
+    .card-img-wrap.loaded img {
+        opacity: 1;
+    }
+    .card-img-wrap .content-overlay { z-index: 5; }
+
+
+    @media (max-width: 1280px) {
+        .app-container { max-width: 100%; }
+        .main-grid { grid-template-columns: 240px 1fr 300px; }
+        .header-search { width: 300px; }
+    }
+    @media (max-width: 1024px) {
+        .main-grid { grid-template-columns: 1fr 300px; }
+        .left-side { display: none; }
+    }
+    @media (max-width: 768px) {
+        .main-grid { grid-template-columns: 1fr; margin-top: 85px; gap: 20px; }
+        .right-side { display: none; }
+        .header-search { display: none; }
+        .post-title { font-size: 17px; }
+        .card-img-wrap { height: 280px; }
+        .post-view { padding: 20px; }
+        .content-overlay { bottom: 10px; left: 10px; right: 10px; padding: 12px; }
+        .social-card { margin-bottom: 40px; }
+    }
+    ]]></b:skin>
+
+    <b:template-skin><![CDATA[
+      /* --- ULTIMATE STABLE LAYOUT EDITOR --- */
+      body#layout { 
+          background: #f8fafc !important; 
+          padding: 50px !important;
+          font-family: 'Segoe UI', sans-serif !important;
+      }
+      
+      /* Reset all complex CSS from the live site */
+      body#layout .left-side, 
+      body#layout .right-side, 
+      body#layout .content-feed,
+      body#layout .app-container,
+      body#layout .main-grid {
+          position: static !important;
+          width: 100% !important;
+          max-width: 1000px !important;
+          margin: 0 auto !important;
+          display: block !important;
+          float: none !important;
+          height: auto !important;
+          overflow: visible !important;
+          backdrop-filter: none !important;
+          box-shadow: none !important;
+      }
+
+      /* Sections: Professional Cards */
+      body#layout .section {
+          background: #ffffff !important;
+          border: 1px solid #e2e8f0 !important;
+          border-radius: 12px !important;
+          margin-bottom: 40px !important;
+          padding: 30px !important;
+          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+          position: relative !important;
+      }
+      
+      body#layout .section::before {
+          content: attr(id);
+          position: absolute;
+          top: -12px; left: 20px;
+          background: #4f46e5;
+          color: #fff;
+          font-size: 11px;
+          font-weight: 900;
+          padding: 4px 15px;
+          border-radius: 6px;
+          text-transform: uppercase;
+          box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+      }
+
+      /* Widgets: Minimal & Clean */
+      body#layout .widget {
+          background: #f8fafc !important;
+          border: 1px solid #e2e8f0 !important;
+          border-radius: 10px !important;
+          margin: 15px 0 !important;
+          padding: 15px !important;
+          transition: 0.3s;
+      }
+      body#layout .widget:hover { border-color: #4f46e5; }
+      
+      body#layout .widget h2 {
+          font-size: 14px !important;
+          color: #1e1b4b !important;
+          font-weight: 800 !important;
+          margin-bottom: 10px !important;
+          text-transform: capitalize !important;
+      }
+
+      /* Functional Buttons */
+      body#layout .add-widget {
+          background: #4f46e5 !important;
+          color: #fff !important;
+          border-radius: 8px !important;
+          padding: 8px 18px !important;
+          font-weight: 700 !important;
+          font-size: 12px !important;
+          display: inline-block !important;
+          border: none !important;
+          cursor: pointer !important;
+      }
+
+      /* Hide System Overlays in Editor */
+      body#layout .adsense-wrapper,
+      body#layout .side-widget,
+      body#layout #LayoutSettings {
+          position: static !important;
+          display: block !important;
+          margin: 0 !important;
+      }
+      /* Developer Signature in Layout Editor (Hard to Remove) */
+      body#layout::after {
+          content: 'Developed & Secured by George Bahgat \2122';
+          position: fixed;
+          bottom: 20px; right: 20px;
+          background: #4f46e5;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 50px;
+          font-weight: 900;
+          font-size: 14px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          z-index: 999999;
+          pointer-events: none;
+      }
+    ]]></b:template-skin>
+</head>
+<body data-theme='dark'>
+
+    <!-- HEADER (SOCIAL BLADE) -->
+    <header class='header-social'>
+        <div class='app-container header-inner'>
+            
+            <a class='brand-logo' expr:href='data:blog.homepageUrl'>
+                <b:section id='SiteBranding' maxwidgets='1' showaddelement='false'>
+                    <b:widget id='Header1' locked='true' title='Site Branding' type='Header' version='2'>
+                        <b:includable id='main'>
+                            <div class='branding-wrap'>
+                                <b:if cond='data:useImage'>
+                                    <img expr:alt='data:title' expr:src='data:sourceUrl' style='height:35px; width:auto; object-fit:contain;'/>
+                                <b:else/>
+                                    <div style='display:flex; align-items:center; gap:10px;'>
+                                        <i class='fa-solid fa-bolt-lightning' style='color:#4f46e5; font-size:20px;'></i>
+                                        <span style='font-weight:900; font-size:20px;'><data:title/></span>
+                                    </div>
+                                </b:if>
+                            </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+            </a>
+
+            <!-- Search Area -->
+            <form action='/search' class='header-social-search' method='get'>
+                <div class='header-search'>
+                    <i class='fa-solid fa-magnifying-glass'></i>
+                    <input name='q' placeholder='Search George&#39;s Feed...' type='text'/>
+                </div>
+            </form>
+
+            <div class='nav-actions'>
+                <button aria-label='Toggle Dark/Light Mode' class='nav-link-btn' onclick='toggleTheme()' title='Toggle Mode'>
+                    <i class='fa-solid fa-moon'></i>
+                </button>
+                <button aria-label='Switch Language' class='nav-link-btn' id='lang-switcher' onclick='switchLanguage()' title='Switch Language'>
+                    <i class='fa-solid fa-globe'></i>
+                </button>
+                <!-- Profile Avatar in Header -->
+                <img alt='George Bahgat Profile' class='author-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png' style='width:35px;height:35px;cursor:pointer;border:1px solid var(--border)'/>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <div class='app-container'>
+        <div class='main-grid'>
+            
+            <!-- LEFT SIDEBAR (NAVIGATION) -->
+            <aside class='left-side'>
+                <div class='nav-card'>
+                    <a class='nav-item active' href='/'>
+                        <i class='fa-solid fa-house-user'></i> Feed
+                    </a>
+                    <a class='nav-item' href='#trending'>
+                        <i class='fa-solid fa-fire-flame-curved'></i> Trending
+                    </a>
+                    <a class='nav-item' href='#latest'>
+                        <i class='fa-solid fa-bolt'></i> New Arrivals
+                    </a>
+                    <a class='nav-item' href='#coding'>
+                        <i class='fa-solid fa-code'></i> Coding Zone
+                    </a>
+                </div>
+                
+                <div class='nav-card'>
+                    <div class='menu-head' style='font-size:11px; text-transform:uppercase; color:var(--text-sub); margin-bottom:10px; font-weight:800;'>Your World</div>
+                    <a class='nav-item' href='/p/about.html'><i class='fa-solid fa-circle-info'></i> About Us</a>
+                    <a class='nav-item' href='/p/contact.html'><i class='fa-solid fa-paper-plane'></i> Contact</a>
+                </div>
+
+                <!-- Small Sidebar Ad Slot -->
+                <div class='adsense-wrapper' style='min-height:200px;'>
+                    <b:section id='SidebarLeftAd' maxwidgets='1' showaddelement='true'>
+                        <b:widget id='HTML101' locked='false' title='Ads' type='HTML'/>
+                    </b:section>
+                </div>
+            </aside>
+
+            <!-- CENTER FEED (POSTS) -->
+            <main class='content-feed'>
+                
+                <!-- TOP ADSENSE -->
+                <div class='adsense-wrapper'>
+                    <b:section id='TopAdSec' maxwidgets='1' showaddelement='true'>
+                         <b:widget id='HTML1' locked='false' title='Top Ad' type='HTML'/>
+                    </b:section>
+                </div>
+
+                <b:section id='MainFeed' showaddelement='true'>
+                     <b:widget id='Blog1' locked='true' title='Main Feed' type='Blog' version='2'>
+                        <b:includable id='main' var='top'>
+                             <b:loop index='i' values='data:posts' var='post'>
+                                <b:if cond='data:view.isMultipleItems'>
+                                    <!-- SOCIAL STYLE CARD -->
+                                    <article class='social-card reveal'>
+                                        <!-- Top Author Bar -->
+                                        <div class='card-top'>
+                                            <div class='author-info'>
+                                                <img alt='George Bahgat' class='author-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png'/>
+                                                <div>
+                                                    <h4 class='author-name'><data:post.author.name/> <i class='fa-solid fa-check-circle v-badge'></i></h4>
+                                                    <p class='post-time'><data:post.dateHeader/></p>
+                                                </div>
+                                            </div>
+                                            <div style='color:var(--text-sub); cursor:pointer;'><i class='fa-solid fa-ellipsis-v'></i></div>
+                                        </div>
+
+                                        <!-- The Image & Floating Title -->
+                                        <div class='card-img-wrap'>
+                                            <b:if cond='data:post.featuredImage'>
+                                                <b:if cond='data:i == 0'>
+                                                    <!-- LCP Optimization for first post -->
+                                                    <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 640)' fetchpriority='high' onload='this.parentElement.classList.add("loaded")'/>
+                                                <b:else/>
+                                                    <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 320)' loading='lazy' onload='this.parentElement.classList.add("loaded")'/>
+                                                </b:if>
+                                            <b:else/>
+                                                <img alt='No Image Available' decoding='async' onload='this.parentElement.classList.add("loaded")' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=' loading='lazy'/>
+                                            </b:if>
+                                            
+                                            <!-- The Glass Title Box -->
+                                            <div class='content-overlay'>
+                                                <b:if cond='data:post.labels'>
+                                                    <b:loop values='data:post.labels' var='label'>
+                                                        <b:if cond='data:label.isFirst'>
+                                                            <span class='post-label'><data:label.name/></span>
+                                                        </b:if>
+                                                    </b:loop>
+                                                </b:if>
+                                                <h2 class='post-title'><a expr:href='data:post.url'><data:post.title/></a></h2>
+                                            </div>
+                                        </div>
+
+                                        <!-- Social Stats Bar -->
+                                        <div class='card-social-stats' expr:data-timestamp='data:post.date.iso8601'>
+                                            <div class='stats-left'>
+                                                <div class='stat-item like-btn' expr:onclick='&quot;handleLike(this, \&quot;&quot; + data:post.id + &quot;\&quot;)&quot;'>
+                                                    <i class='fa-regular fa-heart'></i> <span class='count'>0</span>
+                                                </div>
+                                                <button aria-label='Open Comments' class='stat-item' expr:onclick='&quot;location.href=\&quot;&quot; + data:post.url + &quot;#comments\&quot;&quot;' style='background:none;border:none;font-family:inherit;'>
+                                                    <i class='fa-regular fa-comment'></i> <data:post.numberOfComments/>
+                                                </button>
+                                                <button aria-label='Share Post' class='stat-item share-btn' expr:data-title='data:post.title' expr:data-url='data:post.url' onclick='handleShare(this)' style='background:none;border:none;font-family:inherit;'>
+                                                    <i class='fa-regular fa-share-from-square'></i>
+                                                </button>
+                                            </div>
+                                            <div class='views-count'>
+                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> Views
+                                            </div>
+                                        </div>
+                                    </article>
+
+                                    <!-- In-Feed Ad (Simulated after some posts) -->
+                                    <b:if cond='data:post.id == data:posts[1].id'>
+                                        <div class='adsense-wrapper reveal'>
+                                            <span class='adsense-label'>Suggested for you</span>
+                                            <div style='width:100%; height:100%; display:flex; align-items:center; justify-content:center'>
+                                                 <p style='color:var(--text-sub); font-size:12px;'>ADSENSE IN-FEED UNIT</p>
+                                            </div>
+                                        </div>
+                                    </b:if>
+
+                                <b:else/>
+                                    <!-- Single Post View -->
+                                    <article class='post-view reveal active'>
+                                        <div style='display:flex; align-items:center; gap:15px; margin-bottom:30px;'>
+                                            <img alt='George Bahgat' class='author-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png' style='width:50px;height:50px;'/>
+                                            <div>
+                                                <h1 style='font-size:32px; font-weight:900;'><data:post.title/></h1>
+                                                <p style='color:var(--text-sub); font-size:14px;'>By <data:post.author.name/> &#8226; <data:post.dateHeader/></p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class='post-body-text'>
+                                            <data:post.body/>
+                                        </div>
+                                        
+                                        <!-- Post Social Stats Below Content -->
+                                        <div class='card-social-stats' expr:data-timestamp='data:post.date.iso8601' style='margin-top:40px; background:var(--bg); border:1px solid var(--border); border-radius:15px; padding:20px;'>
+                                             <div class='stats-left'>
+                                                <div class='stat-item like-btn' expr:onclick='&quot;handleLike(this, \&quot;&quot; + data:post.id + &quot;\&quot;)&quot;'>
+                                                    <i class='fa-regular fa-heart'></i> <span class='count'>0</span>
+                                                </div>
+                                                <button aria-label='Post Comments' class='stat-item' style='background:none;border:none;font-family:inherit;'>
+                                                    <i class='fa-regular fa-comment'></i> <data:post.numberOfComments/>
+                                                </button>
+                                                <button aria-label='Share Post' class='stat-item share-btn' expr:data-title='data:post.title' expr:data-url='data:post.url' onclick='handleShare(this)' style='background:none;border:none;font-family:inherit;'>
+                                                    <i class='fa-regular fa-share-from-square'></i>
+                                                </button>
+                                            </div>
+                                            <div class='views-count'>
+                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> Views
+                                            </div>
+                                        </div>
+
+                                        <!-- COMMENTS SECTION -->
+                                        <div id='comments-area'>
+                                            <b:include data='post' name='commentPicker'/>
+                                        </div>
+                                    </article>
+                                </b:if>
+                             </b:loop>
+
+                             <!-- Pagination -->
+                             <div style='text-align:center; padding:50px 0;'>
+                                <b:if cond='data:olderPageUrl'>
+                                    <a class='nav-link-btn' expr:href='data:olderPageUrl' style='width:auto; height:50px; border-radius:50px; padding:0 30px; font-weight:800; background:var(--primary); color:#fff; border:none;'>View More From George</a>
+                                </b:if>
+                             </div>
+                        </b:includable>
+                     </b:widget>
+                </b:section>
+            </main>
+
+            <!-- RIGHT SIDEBAR (WIDGETS) -->
+            <aside class='right-side'>
+                
+                <!-- George Bahgat Profile (Social Style) -->
+                <div class='side-widget profile-widget'>
+                    <div class='profile-bg'></div>
+                    <img alt='George Bahgat' class='profile-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png'/>
+                    <h3 class='profile-name'>George Bahgat <i class='fa-solid fa-check-circle v-badge'></i></h3>
+                    <p class='profile-bio'>Full Stack Software Developer.</p>
+                    <div style='display:flex; justify-content:center; gap:8px;'>
+                                                <a aria-label='George Bahgat GitHub' class='nav-link-btn' href='https://github.com/GeorgeBahgat' style='width:35px;height:35px;font-size:14px;' target='_blank'><i class='fa-brands fa-github'></i></a>
+                                                <a aria-label='George Bahgat YouTube' class='nav-link-btn' href='https://www.youtube.com/@george.bahgat' style='width:35px;height:35px;font-size:14px;' target='_blank'><i class='fa-brands fa-youtube'></i></a>
+                                                <a aria-label='George Bahgat LinkedIn' class='nav-link-btn' href='#' style='width:35px;height:35px;font-size:14px;'><i class='fa-brands fa-linkedin'></i></a>
+                                            </div>
+                </div>
+
+                <!-- Topics Widget (Scrollable Feature) -->
+                <div class='side-widget'>
+                    <div class='widget-head'><i class='fa-solid fa-hashtag'></i> Topics</div>
+                    <b:section id='RightSidebar' showaddelement='true'>
+                        <b:widget id='Label2' locked='false' title='Explore' type='Label'>
+                            <b:includable id='main'>
+                                <div class='topics-scroll'>
+                                    <b:loop values='data:labels' var='label'>
+                                        <a class='topic-item' expr:href='data:label.url'>
+                                            <span class='topic-name'>#<data:label.name/></span>
+                                            <span class='topic-count'><data:label.count/></span>
+                                        </a>
+                                    </b:loop>
+                                </div>
+                            </b:includable>
+                        </b:widget>
+                    </b:section>
+                </div>
+
+                <!-- Trending (Popular) Widget -->
+                <div class='side-widget'>
+                    <div class='widget-head'><i class='fa-solid fa-fire'></i> Popular Media</div>
+                    <b:section id='RightSidebarTrending' showaddelement='true'>
+                         <b:widget id='PopularPosts1' locked='false' title='Most Read' type='PopularPosts'>
+                            <b:includable id='main'>
+                                <b:loop values='data:posts' var='post'>
+                                    <a expr:href='data:post.url' style='display:flex; gap:12px; margin-bottom:15px;'>
+                                        <img decoding='async' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 100)' style='width:60px; height:60px; object-fit:cover; border-radius:10px; flex-shrink:0;'/>
+                                        <div style='font-size:13px; font-weight:700; line-height:1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;'><data:post.title/></div>
+                                    </a>
+                                </b:loop>
+                            </b:includable>
+                         </b:widget>
+                    </b:section>
+                </div>
+
+                <!-- Footer Links in Sidebar for Social Feel -->
+                <div class='legal-links' style='margin-top:20px; border-top:1px solid var(--border); padding-top:15px;'>
+                    <a href='/p/privacy.html' style='font-size:12px;'>Privacy Policy</a>
+                    <a href='/p/terms.html' style='font-size:12px;'>Terms</a>
+                    <a href='/p/cookies.html' style='font-size:12px;'>Cookies</a>
+                    <a href='/p/about.html' style='font-size:12px;'>About Us</a>
+                    <div id='lyn-credit-box' style='margin-top:20px; border-top:1px solid var(--border); padding-top:15px;'>
+                        <p style='font-size:12px; color:var(--text); width:100%; font-weight:700;'>
+                            &#169; 2026 <data:skin.vars.site_name/>. Developed by 
+                            <a href='https://github.com/GeorgeBahgat' id='lyn-dev-link' style='color:var(--primary); text-decoration:underline;' target='_blank'>George Bahgat</a>
+                        </p>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+    //<![CDATA[
+    
+    // 1. Language Logic (George Bahgat Edition)
+    const html = document.documentElement;
+    const langBtnTxt = document.getElementById('lang-switcher');
+    
+    function switchLanguage() {
+        if(html.getAttribute('dir') === 'rtl') {
+            html.setAttribute('dir', 'ltr');
+            html.setAttribute('lang', 'en');
+            localStorage.setItem('lyn-lang', 'en');
+        } else {
+            html.setAttribute('dir', 'rtl');
+            html.setAttribute('lang', 'ar');
+            localStorage.setItem('lyn-lang', 'ar');
+        }
+    }
+
+    // 2. Theme Logic
+    function toggleTheme() {
+        const body = document.body;
+        const current = body.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', next);
+        localStorage.setItem('lyn-theme', next);
+    }
+
+    // 3. Real Interaction System (Like)
+    function handleLike(btn, postId) {
+        const countSpan = btn.querySelector('.count');
+        const icon = btn.querySelector('i');
+        
+        let globalLikes = JSON.parse(localStorage.getItem('lyn-global-likes') || '{}');
+        let userLikes = JSON.parse(localStorage.getItem('lyn-user-likes') || '{}');
+        
+        let currentLikes = globalLikes[postId] || 0;
+
+        if(userLikes[postId]) {
+            delete userLikes[postId];
+            currentLikes = Math.max(0, currentLikes - 1);
+            icon.classList.replace('fa-solid', 'fa-regular');
+            btn.classList.remove('liked');
+        } else {
+            userLikes[postId] = true;
+            currentLikes++;
+            icon.classList.replace('fa-regular', 'fa-solid');
+            btn.classList.add('liked');
+        }
+        
+        globalLikes[postId] = currentLikes;
+        localStorage.setItem('lyn-global-likes', JSON.stringify(globalLikes));
+        localStorage.setItem('lyn-user-likes', JSON.stringify(userLikes));
+        countSpan.textContent = currentLikes.toLocaleString();
+    }
+
+    // 3. Share Logic (Native Web Share)
+    function handleShare(btn) {
+        const title = btn.getAttribute('data-title');
+        const url = btn.getAttribute('data-url');
+
+        if (navigator.share) {
+            navigator.share({ title: title, url: url })
+            .catch(console.error);
+        } else {
+            // Fallback: Copy link and show toast
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.createElement('div');
+                toast.className = 'share-toast';
+                toast.textContent = 'Link copied to clipboard!';
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 3000);
+            });
+        }
+    }
+
+    // 4. Interaction System (Starts at 0)
+    function initStats() {
+        let globalViews = JSON.parse(localStorage.getItem('lyn-global-views') || '{}');
+        let globalLikes = JSON.parse(localStorage.getItem('lyn-global-likes') || '{}');
+        let userLikes = JSON.parse(localStorage.getItem('lyn-user-likes') || '{}');
+
+        document.querySelectorAll('.card-social-stats').forEach(wrapper => {
+            const viewEl = wrapper.querySelector('.v-num');
+            const likeBtn = wrapper.querySelector('.like-btn');
+            const likeCount = likeBtn.querySelector('.count');
+            
+            // Get ID from Like Button onclick
+            const onclick = likeBtn.getAttribute('onclick') || '';
+            const match = onclick.match(/handleLike\(this,\s*["']?(\d+)["']?\)/);
+            
+            if(match) {
+                const postId = match[1];
+
+                // 1. Handle Views (Increment on load if not seen in this session)
+                if(!window['seen_' + postId]) {
+                    globalViews[postId] = (globalViews[postId] || 0) + 1;
+                    localStorage.setItem('lyn-global-views', JSON.stringify(globalViews));
+                    window['seen_' + postId] = true;
+                }
+                
+                // Display Stats
+                if(viewEl) viewEl.textContent = (globalViews[postId] || 0).toLocaleString();
+                if(likeCount) likeCount.textContent = (globalLikes[postId] || 0).toLocaleString();
+                
+                // Mark as Liked if user did it before
+                if(userLikes[postId]) {
+                    likeBtn.classList.add('liked');
+                    likeBtn.querySelector('i').classList.replace('fa-regular', 'fa-solid');
+                }
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', initStats);
+
+    // 4. Reveal Animations on Scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) entry.target.classList.add('active');
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 5. Accessibility Fix for Blogger Cookie Link
+    function fixA11y() {
+        const cookieLinks = document.querySelectorAll('a[href*="blogspot-cookies"]');
+        cookieLinks.forEach(link => {
+            if (link.textContent.trim().toUpperCase() === 'LEARN MORE') {
+                link.setAttribute('aria-label', 'Learn more about Blogger cookies and privacy policy');
+            }
+        });
+    }
+    setTimeout(fixA11y, 2000); // Wait for system scripts to inject
+
+    // 6. Anti-Bypass Footer Protection (Encrypted Logic)
+    (function(){
+        const _0x1a = ['\x68\x74\x74\x70\x73\x3a\x2f\x2f\x67\x69\x74\x68\x75\x62\x2e\x63\x6f\x6d\x2f\x47\x65\x6f\x72\x67\x65\x42\x61\x68\x67\x61\x74', '\x6c\x79\x6e\x2d\x64\x65\x76\x2d\x6c\x69\x6e\x6b', '\x47\x65\x6f\x72\x67\x65\x20\x42\x61\x68\x67\x61\x74'];
+        setInterval(function(){
+            const _link = document.getElementById(_0x1a[1]);
+            if (!_link || _link.href !== _0x1a[0] || _link.textContent.trim() !== _0x1a[2]) {
+                window.location.href = _0x1a[0];
+            }
+        }, 3000);
+    })();
+    
+    // 7. Premium Lightbox Logic
+    if(document.querySelector('.post-body-text img')) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'lyn-lightbox';
+        lightbox.innerHTML = '<img src="" alt="Lightbox"/>';
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('img');
+
+        document.querySelectorAll('.post-body-text img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+
+    //]]>
+    </script>
+
+    <!-- Delayed Core Scripts to avoid Render Blocking & Lighthouse penalty -->
+    <script async='async' src='https://www.blogger.com/static/v1/widgets/3846665042-widgets.js' type='text/javascript'></script>
+
+</body>
+</html>
