@@ -1,7 +1,7 @@
 # 🚀 LYNO PRO - Social Media Style Blogger Template (v1.0.0)
 
 ![LYNO PRO Banner](https://img.shields.io/badge/Blogger-Template-orange?style=for-the-badge&logo=blogger)
-![Version](https://img.shields.io/badge/Version-5.6.0-blue?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
 ![Lighthouse](https://img.shields.io/badge/Performance-100%2F100-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Copyright-red?style=for-the-badge)
 
