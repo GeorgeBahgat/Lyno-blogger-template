@@ -35,8 +35,8 @@
 ## 📸 Screenshots
 
 
-| Desktop Feed | Mobile View | Single Post |
-| :---: | :---: | :---: |
+| Desktop Feed | Mobile View |
+| :---: | :---: | 
 | ![Desktop](https://raw.githubusercontent.com/GeorgeBahgat/Lyno-blogger-template/refs/heads/main/desktop.PNG) | ![Mobile](https://raw.githubusercontent.com/GeorgeBahgat/Lyno-blogger-template/refs/heads/main/mobile.PNG) | 
 
 ---
